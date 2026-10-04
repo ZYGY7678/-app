@@ -41,6 +41,11 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Override protected void onResume() {
+        super.onResume();
+        if (prefs != null) buildHome();
+    }
+
     private void buildHome() {
         ScrollView scroll = new ScrollView(this);
         scroll.setFillViewport(true);
