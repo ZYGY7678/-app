@@ -26,11 +26,12 @@ import java.util.Locale;
 public class MainActivity extends Activity {
     private static final int PICK_BOOK = 700;
     private static final int MAX_RECENTS = 8;
-    private final SharedPreferences prefs = getSharedPreferences("bookflow", MODE_PRIVATE);
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        prefs = getSharedPreferences("bookflow", MODE_PRIVATE);
         getWindow().setStatusBarColor(Color.rgb(8, 10, 17));
         getWindow().setNavigationBarColor(Color.rgb(8, 10, 17));
         buildHome();
