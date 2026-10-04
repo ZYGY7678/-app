@@ -2,6 +2,7 @@ package com.zygy.reader;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
 
@@ -11,7 +12,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -47,7 +47,6 @@ public final class BookParser {
             }
         }
         if(pages.isEmpty()) throw new IOException("ה־EPUB לא מכיל פרקי טקסט מוכרים");
-        Collections.sort(pages,(a,b)->Integer.compare(a.length(),b.length()));
         StringBuilder out=new StringBuilder();
         for(String p:pages){String s=p.trim();if(!s.isEmpty()){out.append(s).append("\n\n\n");}}
         return normalize(out.toString());
