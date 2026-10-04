@@ -51,7 +51,7 @@ public final class WallpaperGenerator {
                 0x99FFFFFF, 0x00000000, Shader.TileMode.CLAMP));
         c.drawCircle(w * 0.18f, h * 0.18f, w * 0.48f, p);
         p.setShader(new RadialGradient(w * 0.78f, h * 0.72f, w * 0.66f,
-                0x557FFFFFF, 0x00000000, Shader.TileMode.CLAMP));
+                0x557FFFFF, 0x00000000, Shader.TileMode.CLAMP));
         c.drawCircle(w * 0.78f, h * 0.72f, w * 0.66f, p);
         p.setShader(null);
         p.setColor(0x22FFFFFF);
@@ -65,7 +65,7 @@ public final class WallpaperGenerator {
         p.setShader(new LinearGradient(0, 0, 0, h, new int[]{0xFF080A14, a, 0xFF111827}, null, Shader.TileMode.CLAMP));
         c.drawRect(0, 0, w, h, p);
         p.setShader(new RadialGradient(w * 0.5f, h * 0.42f, w * 0.62f,
-                0xCCFFFFFF, 0x001FFFFFFF, Shader.TileMode.CLAMP));
+                0xCCFFFFFF, 0x001FFFFF, Shader.TileMode.CLAMP));
         c.drawCircle(w * 0.5f, h * 0.42f, w * 0.62f, p);
         p.setShader(null);
         p.setStyle(Paint.Style.STROKE);
