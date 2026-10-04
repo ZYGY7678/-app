@@ -139,6 +139,7 @@ public class ReaderActivity extends Activity {
         new Thread(() -> {
             try {
                 document=BookParser.parse(this,uri);
+                MainActivity.rememberBook(this, uri, document.title);
                 runOnUiThread(() -> showDocument());
             } catch(Exception e) {
                 runOnUiThread(() -> showError(e));
@@ -416,14 +417,12 @@ public class ReaderActivity extends Activity {
                 .setPositiveButton("חזרה",null).show();
     }
 
-    private ImageButton iconButton(String symbol){
-        ImageButton b=new ImageButton(this); b.setImageDrawable(null); b.setContentDescription(symbol);
-        TextView t=text(symbol,28,textColor,true);
-        final FrameLayout holder=new FrameLayout(this);
-        holder.addView(t,new FrameLayout.LayoutParams(-1,-1));
-        holder.setBackground(round(0x14000000,dp(14)));
-        holder.setOnClickListener(v->b.performClick());
-        b.setBackgroundColor(Color.TRANSPARENT); b.setTag(holder); return b;
+    private TextView iconButton(String symbol){
+        TextView b=text(symbol,28,textColor,true);
+        b.setContentDescription(symbol);
+        b.setGravity(Gravity.CENTER);
+        b.setBackground(round(0x14000000,dp(14)));
+        return b;
     }
 
     private TextView text(String s,float size,int color,boolean bold){
