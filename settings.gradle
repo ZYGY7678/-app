@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "WallpapersApp"
+rootProject.name = "BookFlowReader"
 include(":app")
